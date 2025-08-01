@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend Service Dashboard Of CaffeeTest</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://ddi-dev.com/uploads/backend-is.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../CSS/Home.css" />
+  </head>
+
+  <body>
+    <div class="background-pattern"></div>
+
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <span class="material-icons">cloud_done</span>
+          Backend Service Dashboard
+        </div>
+        <div class="status-indicator">
+          <span class="material-icons">check_circle</span>
+          All Systems Operational
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="nav-item active">
+          <span class="material-icons">dashboard</span>
+          Overview
+        </div>
+        <div class="nav-item">
+          <span class="material-icons">api</span>
+          API Endpoints
+        </div>
+        <div class="nav-item">
+          <span class="material-icons">security</span>
+          Security
+        </div>
+        <div class="nav-item">
+          <span class="material-icons">storage</span>
+          Database
+        </div>
+        <div class="nav-item">
+          <span class="material-icons">settings</span>
+          Configuration
+        </div>
+        <div class="nav-item">
+          <span class="material-icons">help</span>
+          Documentation
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="dashboard-grid">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <span class="material-icons">speed</span>
+              </div>
+              <h3 class="card-title">System Performance</h3>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Response Time</span>
+              <span class="metric-value success">45ms</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Uptime</span>
+              <span class="metric-value success">99.9%</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">CPU Usage</span>
+              <span class="metric-value">23%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 23%"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <span class="material-icons">memory</span>
+              </div>
+              <h3 class="card-title">Memory & Storage</h3>
+            </div>
+            <div class="metric">
+              <span class="metric-label">RAM Usage</span>
+              <span class="metric-value">4.2GB / 16GB</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Disk Space</span>
+              <span class="metric-value">127GB / 500GB</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Cache Hit Rate</span>
+              <span class="metric-value success">94.2%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 26%"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <span class="material-icons">network_check</span>
+              </div>
+              <h3 class="card-title">Network & Traffic</h3>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Active Connections</span>
+              <span class="metric-value success">1,247</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Requests/Min</span>
+              <span class="metric-value">8,934</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Bandwidth</span>
+              <span class="metric-value">2.3MB/s</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 67%"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <span class="material-icons">shield</span>
+              </div>
+              <h3 class="card-title">Security Status</h3>
+            </div>
+            <div class="metric">
+              <span class="metric-label">SSL Certificate</span>
+              <span class="metric-value success">Valid</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Firewall</span>
+              <span class="metric-value success">Active</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Failed Attempts</span>
+              <span class="metric-value">0</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Last Security Scan</span>
+              <span class="metric-value">2 hours ago</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <span class="material-icons">storage</span>
+              </div>
+              <h3 class="card-title">Database Health</h3>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Query Time</span>
+              <span class="metric-value success">12ms</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Connections</span>
+              <span class="metric-value">85</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Errors</span>
+              <span class="metric-value">0</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 18%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <span class="material-icons">groups</span>
+              </div>
+              <h3 class="card-title">User Activity</h3>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Active Users</span>
+              <span class="metric-value success">412</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Sign-ups Today</span>
+              <span class="metric-value">57</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Avg Session Time</span>
+              <span class="metric-value">5m 23s</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 42%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">flash_on</span>
+            </div>
+            <h4 class="feature-title">Lightning Fast</h4>
+            <p class="feature-description">
+              Optimized for peak performance with advanced caching and load
+              balancing
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">lock</span>
+            </div>
+            <h4 class="feature-title">Enterprise Security</h4>
+            <p class="feature-description">
+              Bank-grade security with encrypted data transmission and secure
+              authentication
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">trending_up</span>
+            </div>
+            <h4 class="feature-title">Auto Scaling</h4>
+            <p class="feature-description">
+              Automatically scales resources based on demand to maintain optimal
+              performance
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">backup</span>
+            </div>
+            <h4 class="feature-title">Reliable Backup</h4>
+            <p class="feature-description">
+              Automated daily backups with 99.99% data recovery guarantee
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">insights</span>
+            </div>
+            <h4 class="feature-title">Real-time Analytics</h4>
+            <p class="feature-description">
+              Comprehensive monitoring and analytics dashboard for performance
+              insights
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">support_agent</span>
+            </div>
+            <h4 class="feature-title">24/7 Support</h4>
+            <p class="feature-description">
+              Round-the-clock technical support and monitoring by our expert
+              team
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">code</span>
+            </div>
+            <h4 class="feature-title">Developer Friendly</h4>
+            <p class="feature-description">
+              Clean APIs, robust documentation, and full SDK support for rapid
+              integration
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">update</span>
+            </div>
+            <h4 class="feature-title">Seamless Updates</h4>
+            <p class="feature-description">
+              Zero-downtime deployments with automated version rollbacks and
+              changelogs
+            </p>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn">
+            <span class="material-icons">description</span>
+            API Documentation
+          </button>
+          <button class="btn btn-secondary">
+            <span class="material-icons">analytics</span>
+            View Metrics
+          </button>
+          <button class="btn btn-secondary">
+            <span class="material-icons">settings</span>
+            System Settings
+          </button>
+          <button class="btn btn-secondary">
+            <span class="material-icons">download</span>
+            Download Logs
+          </button>
+          <button class="btn btn-secondary">
+            <span class="material-icons">bug_report</span>
+            Report Issue
+          </button>
+          <button class="btn btn-secondary">
+            <span class="material-icons" style="width: 44px">support</span>
+            Contact Us
+          </button>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-left">
+          <span>Server: production-01</span>
+          <span>Port: 5000</span>
+          <span>Version: 2.4.1</span>
+        </div>
+        <div class="footer-right">
+          <div class="live-indicator"></div>
+          <span>Live since: ${new Date().toLocaleString()}</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../JS/Home.js"></script>
+  </body>
+</html>
