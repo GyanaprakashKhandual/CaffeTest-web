@@ -31,5 +31,25 @@
     "winston": "^3.17.0",
     "ws": "^8.18.3",
     "xss-clean": "^0.1.4"
-  }
+  },
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GyanaprakashKhandual/CaffeTest-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GyanaprakashKhandual/CaffeTest-web/issues"
+  },
+  "homepage": "https://github.com/GyanaprakashKhandual/CaffeTest-web#readme"
 }
