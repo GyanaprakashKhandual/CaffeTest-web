@@ -1,42 +1,8 @@
 {
-  "dependencies": {
-    "bcryptjs": "^3.0.2",
-    "cloudinary": "^2.7.0",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "csurf": "^1.11.0",
-    "dotenv": "^17.2.1",
-    "exceljs": "^4.4.0",
-    "express": "^5.1.0",
-    "express-mongo-sanitize": "^2.2.0",
-    "express-rate-limit": "^8.0.1",
-    "express-validator": "^7.2.1",
-    "helmet": "^8.1.0",
-    "hpp": "^0.2.3",
-    "http-status-codes": "^2.3.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.17.0",
-    "morgan": "^1.10.1",
-    "multer": "^2.0.2",
-    "nodemon": "^3.1.10",
-    "passport": "^0.7.0",
-    "passport-jwt": "^4.0.1",
-    "passport-local": "^1.0.0",
-    "pdf-lib": "^1.17.1",
-    "sharp": "^0.34.3",
-    "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1",
-    "winston": "^3.17.0",
-    "ws": "^8.18.3",
-    "xss-clean": "^0.1.4"
-  },
   "name": "web",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -51,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/GyanaprakashKhandual/CaffeTest-web/issues"
   },
-  "homepage": "https://github.com/GyanaprakashKhandual/CaffeTest-web#readme"
+  "homepage": "https://github.com/GyanaprakashKhandual/CaffeTest-web#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.1",
+    "nodemailer": "^7.0.5"
+  }
 }
