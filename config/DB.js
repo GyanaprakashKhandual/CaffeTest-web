@@ -5,7 +5,6 @@ const connectDB = async () => {
         const conn = await mongoose.connect(process.env.MONGO_URI);
         console.log('MongoDB connected successfully on cloud')
         console.log(`Host: ${conn.connection.host}`);
-        console.log(`Database: ${conn.connection.name}`);
     } catch (error) {
         console.error('\nInternal Database Error');
         console.error(`Error Message: ${error.message}`);
