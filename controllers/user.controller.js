@@ -93,21 +93,23 @@ const verifyOTPAndRegister = async (req, res) => {
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log('Login attempt for:', email); // Debug log
 
-    // Find user by email
     const user = await User.findOne({ email });
+    console.log('User found:', user); // Debug log
 
     if (!user) {
+      console.log('No user found with this email'); // Debug log
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    // Check password
+    console.log('Stored hashed password:', user.password); // Debug log
     const isPasswordValid = await user.comparePassword(password);
+    console.log('Password valid:', isPasswordValid); // Debug log
+
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
-
-    // Generate JWT token
     const token = generateToken(user._id);
 
     // Return user data (excluding password) and token
@@ -123,12 +125,12 @@ const loginUser = async (req, res) => {
       user: userResponse,
       token,
     });
+
   } catch (error) {
     console.error("Error in loginUser:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
 const logoutUser = (req, res) => {
   res.status(200).json({ message: "Logout successful" });
 };
