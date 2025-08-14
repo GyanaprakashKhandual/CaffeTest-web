@@ -2,6 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 
+// Routes
+const authRoutes = require('./routes/user.route');
+
 // Functions
 const connectDB = require('./config/DB');
 
@@ -15,6 +18,8 @@ app.use(express.json());
 connectDB();
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/api/v1/auth', authRoutes);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
