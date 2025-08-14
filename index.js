@@ -4,11 +4,7 @@ const path = require('path');
 const cors = require('cors');
 
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+
 
 // Routes
 const authRoutes = require('./routes/user.route');
@@ -18,6 +14,11 @@ const connectDB = require('./config/DB');
 
 dotenv.config();
 const app = express();
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 
 // Middleware
 app.use(express.json());
