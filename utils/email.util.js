@@ -22,7 +22,7 @@ const sendOTPEmail = async (email, otp) => {
     subject: 'Your OTP for Registration',
     text: `Your OTP is: ${otp}`,
     html: `
-    <div style="font-family: Arial, sans-serif; padding: 40px; min-height: 100vh;">
+    <div style="font-family: Arial, sans-serif; padding: 40px; max-height: 80vh">
         <div style="
             max-width: 520px;
             margin: auto;
