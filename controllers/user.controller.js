@@ -10,6 +10,7 @@ const generateOTP = require('../utils/otp.util');
 // Send OTP to user's email
 const sendOTP = async (req, res) => {
   try {
+    
     const { email } = req.body;
 
     // Check if user already exists
