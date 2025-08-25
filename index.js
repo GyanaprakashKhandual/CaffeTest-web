@@ -15,6 +15,7 @@ const projectRoutes = require('./routes/project.route');
 
 
 const app = express();
+app.use(express.json());
 
 app.use(
     session({
