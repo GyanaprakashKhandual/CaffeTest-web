@@ -1,17 +1,14 @@
 const Project = require('../models/project.model');
 
 const getProjects = async (req, res) => {
-
     try {
-        
-        const projects = await Project.findOne({ user: req.user.id});
-
+        // Return all projects for the user
+        const projects = await Project.find({ user: req.user.id });
         res.status(200).json({
             success: true,
             count: projects.length,
             data: projects
         });
-
     } catch (error) {
         res.status(500).json({
             success: false,
@@ -19,7 +16,7 @@ const getProjects = async (req, res) => {
             error: error.message
         });
     }
-}
+};
 
 const getProject = async (req, res) => {
     try {
@@ -57,6 +54,21 @@ const getProject = async (req, res) => {
             message: 'Server Error',
             error: error.message
         });
+    }
+};
+const getProjectBySlug = async (req, res) => {
+    try {
+        const project = await Project.findOne({ slug: req.params.slug });
+        if (!project) {
+            return res.status(404).json({ success: false, message: "Project not found" });
+        }
+        // Make sure user owns the project
+        if (project.user.toString() !== req.user.id) {
+            return res.status(401).json({ success: false, message: "Not authorized to access this project" });
+        }
+        res.json({ success: true, data: project });
+    } catch (err) {
+        res.status(500).json({ success: false, message: "Server error" });
     }
 };
 
@@ -177,4 +189,4 @@ const deleteProject = async (req, res) => {
 }
 
 
-module.exports = { getProject, getProjects, createProject, updateProject, deleteProject};
+module.exports = { getProject, getProjects, createProject, updateProject, deleteProject, getProjectBySlug };
