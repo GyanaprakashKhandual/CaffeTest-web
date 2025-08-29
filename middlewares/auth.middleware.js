@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 
-const protect = async (req, resizeBy, next) => {
+const protect = async (req, res, next) => {
   let token;
 
   try {
@@ -10,21 +10,27 @@ const protect = async (req, resizeBy, next) => {
       req.headers.authorization.startsWith("Bearer")
     ) {
       token = req.headers.authorization.split(" ")[1];
-
-      const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-
-      req.User = await User.findById(decoded.id).select("-password");
-
-      if (!req.User) {
-        return res.status(401).json({ message: "user not found" });
+      console.log('Received token:', token); // Debug log
+      if (!token || token === 'null' || token === 'undefined') {
+        return res.status(401).json({ message: "Auth token missing or empty" });
       }
-      next();
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = await User.findById(decoded.id).select("-password");
+        if (!req.user) {
+          return res.status(401).json({ message: "user not found" });
+        }
+        next();
+      } catch (err) {
+        console.error('JWT verification error:', err.message);
+        return res.status(401).json({ message: "Invalid or malformed token" });
+      }
     } else {
       return res.status(401).json({ message: "No Auth token provided" });
     }
   } catch (error) {
     console.error(error);
-    res.status(401).json({ message: "Unauthorized: Invalid token" });
+    return res.status(401).json({ message: "Unauthorized: Invalid token" });
   }
 };
 
