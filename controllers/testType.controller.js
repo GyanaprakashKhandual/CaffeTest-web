@@ -20,7 +20,20 @@ exports.createTestType = async (req, res) => {
       testFramework,
     });
 
-    res.status(201).json({ success: true, data: newTestType });
+    // format response with testType_id
+    res.status(201).json({
+      success: true,
+      data: {
+        testType_id: newTestType._id,
+        user: newTestType.user,
+        project: newTestType.project,
+        testTypeName: newTestType.testTypeName,
+        testTypeDesc: newTestType.testTypeDesc,
+        testFramework: newTestType.testFramework,
+        createdAt: newTestType.createdAt,
+        updatedAt: newTestType.updatedAt,
+      },
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -32,9 +45,20 @@ exports.getTestTypesByProject = async (req, res) => {
   try {
     const testTypes = await TestType.find({ project: req.params.projectId })
       .populate("user", "name email")
-      .populate("project", "projectName");
+      .populate("project", "projectName")
+      .lean(); // returns plain JS objects instead of Mongoose docs
 
-    res.status(200).json({ success: true, count: testTypes.length, data: testTypes });
+    // add testType_id field for each test type
+    const formattedTestTypes = testTypes.map((t) => ({
+      testType_id: t._id,
+      ...t,
+    }));
+
+    res.status(200).json({
+      success: true,
+      count: formattedTestTypes.length,
+      data: formattedTestTypes,
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -50,7 +74,15 @@ exports.deleteTestType = async (req, res) => {
       return res.status(404).json({ success: false, message: "Test Type not found" });
     }
 
-    res.status(200).json({ success: true, message: "Test Type deleted successfully" });
+    res.status(200).json({
+      success: true,
+      message: "Test Type deleted successfully",
+      deletedTestType: {
+        testType_id: testType._id,
+        testTypeName: testType.testTypeName,
+        project: testType.project,
+      },
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
