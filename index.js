@@ -12,6 +12,7 @@ const connectDB = require('./configs/db.config');
 const authRoutes = require('./routes/user.route');
 const projectRoutes = require('./routes/project.route');
 const testResultRoutes = require('./routes/testresult.route.js');
+const testTypeRoutes = require('./routes/testType.route.js');
 
 const app = express();
 
@@ -53,7 +54,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/project', projectRoutes);
 app.use('/api/v1/test', testResultRoutes);
-
+app.use('/api/v1/test', testTypeRoutes);
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
