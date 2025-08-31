@@ -11,6 +11,7 @@ const connectDB = require('./configs/db.config');
 
 const authRoutes = require('./routes/user.route');
 const projectRoutes = require('./routes/project.route');
+const testResultRoutes = require('./routes/testresult.route.js');
 
 const app = express();
 
@@ -49,9 +50,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// ✅ ROUTES SHOULD COME AFTER ALL MIDDLEWARE
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/project', projectRoutes);
+app.use('/api/v1/test', testResultRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
