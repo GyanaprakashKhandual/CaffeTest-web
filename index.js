@@ -39,7 +39,7 @@ const PORT = process.env.PORT;
 app.use(cors({
     origin: [
         'http://localhost:3000',
-        'https://caffetest.vercel.app' // Fixed: added https://
+        'https://caffeetest.vercel.app' // Fixed: added https://
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
