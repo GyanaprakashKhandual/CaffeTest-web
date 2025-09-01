@@ -10,7 +10,7 @@ const { validateTestType } = require("../middlewares/testType.validator");
 router.post("/:projectId/test-types", validateTestType, createTestType);
 
 // Get all TestTypes by Project
-router.get("/projects/:projectId/test-types", getTestTypesByProject);
+router.get("/:projectId/test-types", getTestTypesByProject);
 
 
 
