@@ -20,7 +20,7 @@ router.route('/')
     .get(getProjects)
     .post(createProject);
 
-router.get('/slug/:slug', getProjectBySlug); // New route to get project by slug
+
 
 router.route('/:id')
     .get(getProject)
